@@ -21,3 +21,7 @@ spring batch for finance reconciliation
 * 如果订单表中有多条记录，找到金额同excel一致的订单组合，如果未找到，在对账差异文件记录差异原因，金额不一致。如果找到了，在订单表更新这个组合订单批次id，同时将其余的订单记录到对账差异文件中，差异原因，我方有三方无。不管结果怎么样，设置这些订单状态为对账中。
 * 在完成以上对账之后，查询要求时间范围内，对应的合作机构，未进行对账的订单，在对账差异文件记录这些订单，差异原因为我方有对方无。
 
+
+## http启动任务
+* curl -d "" localhost:8080/job/launchJob 通过发送post请求启动任务
+* 访问http://localhost:8080/h2-console，设置jdbcUrl:jdbc:h2:mem:mydb 访问批次任务数据 
